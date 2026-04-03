@@ -18,7 +18,7 @@ const features: Feature[] = [
     icon: CheckCircle2,
     title: "Task Clarity",
     description:
-      "See who's doing what, what's blocked, and what shipped—all in one glance.",
+      "See who's doing what, what's blocked, and what shipped all in one glance.",
   },
   {
     icon: Calendar,

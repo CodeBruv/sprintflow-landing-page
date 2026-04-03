@@ -22,7 +22,7 @@ export default function Solution() {
           <p className="text-muted-foreground text-lg leading-relaxed">
             SprintFlow brings structure to your workflow without adding
             complexity. Track work, share updates, and keep everyone
-            aligned—without constant meetings.
+            aligned without constant meetings.
           </p>
         </div>
       </div>

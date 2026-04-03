@@ -8,6 +8,7 @@ import Features from "@/components/sections/Features";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Pricing from "@/components/sections/Pricing";
 import FinalCTA from "@/components/sections/FinalCTA";
+import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/sections/Footer";
 
 export default function Index() {
@@ -25,6 +26,7 @@ export default function Index() {
         <HowItWorks />
         <Pricing />
         <FinalCTA />
+        <ContactSection />
       </main>
       <Footer />
     </>

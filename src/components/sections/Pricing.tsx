@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 interface Plan {
   name: string;
@@ -34,6 +35,25 @@ const plans: Plan[] = [
 ];
 
 export default function Pricing() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleCTA = () => {
+    // If already on homepage → scroll directly
+    if (location.pathname === "/") {
+      const el = document.getElementById("contact");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // If on another page → go home first, then scroll
+      navigate("/");
+
+      setTimeout(() => {
+        const el = document.getElementById("contact");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 80);
+    }
+  };
+
   return (
     <section id="pricing" className="section-padding bg-sf-surface">
       <div className="section-container">
@@ -56,6 +76,7 @@ export default function Pricing() {
               <h3 className="text-lg font-semibold text-foreground mb-1">
                 {plan.name}
               </h3>
+
               <div className="flex items-baseline gap-1 mb-6">
                 <span className="text-4xl font-extrabold text-foreground tabular-nums">
                   {plan.price}
@@ -67,7 +88,10 @@ export default function Pricing() {
 
               <ul className="space-y-3 mb-8">
                 {plan.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <li
+                    key={f}
+                    className="flex items-center gap-2 text-sm text-muted-foreground"
+                  >
                     <Check size={16} className="text-sf-green shrink-0" />
                     {f}
                   </li>
@@ -78,6 +102,7 @@ export default function Pricing() {
                 variant={plan.highlighted ? "hero" : "hero-outline"}
                 size="lg"
                 className="w-full"
+                onClick={handleCTA}
               >
                 {plan.cta}
               </Button>
