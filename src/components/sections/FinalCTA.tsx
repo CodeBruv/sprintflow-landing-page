@@ -12,7 +12,7 @@ export default function FinalCTA() {
       <div className="section-container text-center relative reveal">
 
         <h2 className="text-3xl md:text-4xl font-bold text-sf-dark-foreground mb-4 leading-tight">
-          Your team isn’t the problem.
+          Your team is not the problem.
           <br />
           <span className="text-primary-foreground">
             Your workflow is.
